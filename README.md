@@ -31,7 +31,7 @@
 
 ### Association
 - belongs_to             :user
-- has_many: likes
+- has_many: likes        
 - has_many: comments
 - belongs_to_active_hash :category
 - belongs_to_active_hash :time
@@ -54,6 +54,7 @@
 | user          | references | null: false, foreign_key: true |
 | items         | references | null: false, foreign_key: true |
 | comment       | text       | null: false                    |
+
 ### Association
 - belongs_to: user
-- belongs_to: items
+- belongs_to: cook
