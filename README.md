@@ -17,6 +17,14 @@
 - has_many: comments
 - belongs_to_active_hash :genre
 
+with_options presence: true do
+  validates :nickname
+  validates :profile
+end
+with_options presence: true,numericality: { other_than: 1 } do
+  validates :genre_id
+end
+
 ## cooksテーブル
 | Column        | Type       | Options                        |
 | -----------   | ---------- | ------------------------------ |
@@ -33,8 +41,19 @@
 - belongs_to             :user
 - has_many: likes        
 - has_many: comments
-- belongs_to_active_hash :category
-- belongs_to_active_hash :time
+- belongs_to_active_hash :category_id
+- belongs_to_active_hash :time_id
+
+with_options presence: true do
+  validates :title
+  validates :catch_copy
+  validates :material
+  validates :making
+end
+with_options presence: true,numericality: { other_than: 1 } do
+  validates :category_id
+  validates :time_id
+end
 
 
 ##  likes テーブル
@@ -52,8 +71,8 @@
 | Column        | Type       | Options                        |
 | -----------   | ---------- | ------------------------------ |
 | user          | references | null: false, foreign_key: true |
-| items         | references | null: false, foreign_key: true |
-| comment       | text       | null: false                    |
+| cook         | references | null: false, foreign_key: true |
+| text          | text       | null: false                    |
 
 ### Association
 - belongs_to: user
