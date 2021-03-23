@@ -6,7 +6,7 @@
 | Column             | Type   | Options                  |
 | -----------------  | ------ | -------------------------|
 | nickname	         | string	| null: false unique: true |
-| email              | string | null: false unique: true |
+| email              | string | null: false              |
 | encrypted_password | string | null: false              |
 | genre_id           | integer| null: false              |
 | profile            | text   | null: false              |
