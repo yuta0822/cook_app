@@ -4,10 +4,11 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+         
+  has_many   :cooks
+
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :genre
-  
-  has_many   :cooks
          
   with_options presence: true do
     validates :nickname

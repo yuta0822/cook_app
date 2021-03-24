@@ -1,0 +1,10 @@
+<div class="card">
+  <%= link_to image_tag(cook.image, class: :card__img ), cook_path(cook) %>
+  <div class="card__body">
+    <%= link_to cook.title, cook_path(cook), class: :card__title%>
+    <p class="card__summary">
+      <%= cook.catch_copy %>
+    </p>
+    <%= link_to cook.user.nickname, user_path(cook.user_id), class: :card__user %>
+  </div>
+</div>

@@ -1,0 +1,35 @@
+<%= form_with model: @cook, local: true do |f|%>
+  <div class="field">
+    <%= f.label :hoge, "料理名" %><br />
+    <%= f.text_field :hoge, id:"cook_title" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :hoge, "キャッチコピー" %><br />
+    <%= f.text_area :hoge, class: :form__text, id:"cook_catch_copy" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :hoge, "材料" %><br />
+    <%= f.text_area :hoge, class: :form__text, id:"cook_material" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :hoge, "作り方" %><br />
+    <%= f.text_area :hoge, class: :form__text, id:"cook_making" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :hoge, "ポイント" %><br />
+    <%= f.text_area :hoge, class: :form__text, id:"cook_point" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :hoge, "料理の画像投稿" %><br />
+    <%= f.file_field :hoge, id:"cook_image" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "保存する", class: :form__btn  %>
+  </div>
+<% end %>
