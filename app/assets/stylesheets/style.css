@@ -332,12 +332,12 @@ a {
   }
 }
 
-.items-detail {
+.field-detail {
   display: flex;
   justify-content: space-between;
 }
 
-.items-detail>.form {
+.field-detail>.form {
   width: 310px;
 }
 
