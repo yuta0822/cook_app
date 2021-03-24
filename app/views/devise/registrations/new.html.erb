@@ -8,35 +8,43 @@
         <%= form_with model: @user, url: user_registration_path, local: true do |f| %>
 
         <div class="field">
-          <%= f.label :email, "メールアドレス" %><br />
-          <%= f.email_field :email, id:"user_email", autofocus: true, autocomplete: "email" %>
+          <%= f.label :email, "メールアドレス" %>
+          <span class="indispensable">必須</span><br />
+          <%= f.email_field :email, class: :form__field, id:"user_email", autofocus: true, autocomplete: "email" %>
         </div>
 
         <div class="field">
-          <%= f.label :password, "パスワード（6文字以上）" %><br />
-          <%= f.password_field :password, id:"user_password", autocomplete: "new-password" %>
+          <%= f.label :password, "パスワード（6文字以上）" %>
+          <span class="indispensable">必須</span><br />
+          <%= f.password_field :password, class: :form__field, id:"user_password", autocomplete: "new-password" %>
         </div>
 
         <div class="field">
-          <%= f.label :password_confirmation, "パスワード再入力" %><br />
-          <%= f.password_field :password_confirmation, id:"user_password_confirmation", autocomplete: "new-password" %>
+          <%= f.label :password_confirmation, "パスワード再入力" %>
+          <span class="indispensable">必須</span><br />
+          <%= f.password_field :password_confirmation, class: :form__field, id:"user_password_confirmation", autocomplete: "new-password" %>
         </div>
 
         <div class="field">
-          <%= f.label :nickname, "ユーザー名" %><br />
-          <%= f.text_field :nickname, id:"user_name" %>
+          <%= f.label :nickname, "ユーザー名" %>
+          <span class="indispensable">必須</span><br />
+          <%= f.text_field :nickname, class: :form__field, id:"user_name" %>
+        </div>
+
+        <div class="items-detail">
+          <div class="form">
+            <div class="weight-bold-text">  得意ジャンル
+              <span class="indispensable">必須</span>
+            </div>
+         <%= f.collection_select(:hoge, [], :hoge, :hoge, {}, {class:"select-box", id:"item-scheduled-delivery"}) %>
+          </div>
         </div>
 
         <div class="field">
-          <%= f.label :genre_id, "得意ジャンル" %><br />
-          <%= f.text_area :genre_id, class: :form__text, id:"user_genre_id" %>
+          <%= f.label :profile, "プロフィール" %><br />
+          <%= f.text_area :profile, class: :form__text, id:"user_profile" %>
         </div>
-
-        <div class="field">
-          <%= f.label :hoge, "プロフィール" %><br />
-          <%= f.text_area :hoge, class: :form__text, id:"user_profile" %>
-        </div>
-
+        
         <div class="actions">
           <%= f.submit "新規登録", class: :form__btn  %>
         </div>
