@@ -6,6 +6,8 @@ class User < ApplicationRecord
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :genre
+  
+  has_many   :cooks
          
   with_options presence: true do
     validates :nickname
