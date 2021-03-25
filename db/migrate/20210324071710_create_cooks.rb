@@ -5,7 +5,7 @@ class CreateCooks < ActiveRecord::Migration[6.0]
       t.string :title,            null: false 
       t.text   :catch_copy,       null: false
       t.integer :category_id,     null: false
-      t.integer :time_id,         null: false
+      t.integer :cooktime_id,     null: false
       t.text   :material,         null: false
       t.text   :making,           null: false
       t.text   :point
