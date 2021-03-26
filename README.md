@@ -12,9 +12,9 @@
 | profile            | text   | null: false              |
 
 ### Association
-- has_many: cooks
-- has_many: likes
-- has_many: comments
+- has_many :cooks
+- has_many :likes
+- has_many :comments
 - belongs_to_active_hash :genre
 
 with_options presence: true do
@@ -38,9 +38,9 @@ end
 | user          | references | null: false, foreign_key: true |
 
 ### Association
-- belongs_to             :user
-- has_many: likes        
-- has_many: comments
+- belongs_to :user
+- has_many :likes        
+- has_many :comments
 - belongs_to_active_hash :category_id
 - belongs_to_active_hash :time_id
 
@@ -63,8 +63,8 @@ end
 | cook          | references | null: false, foreign_key: true |
 
 ### Association
-- belongs_to: user
-- belongs_to: cook
+- belongs_to :user
+- belongs_to :cook
 
 
 ##  comments テーブル
@@ -75,5 +75,5 @@ end
 | text          | text       | null: false                    |
 
 ### Association
-- belongs_to: user
-- belongs_to: cook
+- belongs_to :user
+- belongs_to :cook

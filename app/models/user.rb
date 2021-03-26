@@ -5,7 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
          
-  has_many   :cooks
+  has_many   :cooks   , dependent: :destroy
+  has_many   :comments, dependent: :destroy
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :genre

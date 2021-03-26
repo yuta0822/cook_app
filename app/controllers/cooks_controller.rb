@@ -1,7 +1,5 @@
 class CooksController < ApplicationController
-
-
-
+  
   def index
     @cook = Cook.all
   end
@@ -35,10 +33,16 @@ class CooksController < ApplicationController
     end
   end
 
+  def destroy
+    @cook = Cook.find(params[:id])
+    @cook.destroy
+    redirect_to cooks_path
+  end
+
   def show
     @cook = Cook.find(params[:id])
-    # @comments = @prototype.comments.includes(:user)
-    # @comment = Comment.new
+    @comments = @cook.comments.includes(:user)
+    @comment = Comment.new
   end
   
 
