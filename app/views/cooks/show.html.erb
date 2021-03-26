@@ -5,14 +5,12 @@
         <%= @cook.title %>
       </p>
       <%= link_to @cook.user.nickname, root_path, class: :cook__user %>
-      <%# プロトタイプの投稿者とログインしているユーザーが同じであれば以下を表示する %>
         <div class="cook__manage">
         <% if user_signed_in? && current_user.id == @cook.user_id %>
           <%= link_to "編集する", edit_cook_path(@cook.id), class: :cook__btn %>
           <%= link_to "削除する", cook_path(@cook.id), method: :delete, class: :cook__btn %>
         <% end %>
         </div>
-      <%# // プロトタイプの投稿者とログインしているユーザーが同じであれば上記を表示する %>
       <div class="cook__image">
         <%= image_tag @cook.image %>
       </div>
@@ -43,7 +41,6 @@
         </div>
       </div>
       <div class="cook__comments">
-        <%# ログインしているユーザーには以下のコメント投稿フォームを表示する %>
         <% if user_signed_in? %>
           <%= form_with(model: [@cook, @comment], local: true) do |f|%>
             <div class="field">
@@ -55,19 +52,16 @@
             </div>
            <% end %>  
         <% end %> 
-        <%# // ログインしているユーザーには上記を表示する %>
-        <ul class="comments_lists">
-          <%# 投稿に紐づくコメントを一覧する処理を記述する %>
+        <ul class="comments_lists"> 
             <li class="comments_list">
               <h4>＜コメント一覧＞</h4>
               <% @comments.each do |comment| %>
                 <p>
                   <%= comment.text %>
-                  <%= link_to "#{comment.user.nickname}", cook_path(comment.user_id), class: :comment_user %>
+                  <%= link_to "#{comment.user.nickname}", user_path(comment.user_id), class: :comment_user %>
                 </p>
               <% end %>
             </li>
-          <%# // 投稿に紐づくコメントを一覧する処理を記述する %>
         </ul>
       </div>
     </div>

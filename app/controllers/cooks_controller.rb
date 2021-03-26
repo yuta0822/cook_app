@@ -1,4 +1,7 @@
 class CooksController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :move_to_index, except: [:index, :show]
+
   
   def index
     @cook = Cook.all
@@ -51,4 +54,9 @@ class CooksController < ApplicationController
     params.require(:cook).permit(:title, :catch_copy, :category_id, :cooktime_id, :material, :making, :point, :image).merge(user_id: current_user.id)
   end
 
+  def move_to_index
+    unless user_signed_in?
+     redirect_to action: :index
+    end 
+  end 
 end
