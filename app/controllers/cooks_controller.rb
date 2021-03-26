@@ -18,6 +18,28 @@ class CooksController < ApplicationController
       render :new
     end
   end
+
+  def edit
+    @cook = Cook.find(params[:id])
+    unless @cook.user_id == current_user.id
+       redirect_to cooks_path
+    end
+  end
+
+  def update
+    @cook = Cook.find(params[:id])
+    if @cook.update(cook_params)
+        redirect_to cook_path
+    else
+       render :edit
+    end
+  end
+
+  def show
+    @cook = Cook.find(params[:id])
+    # @comments = @prototype.comments.includes(:user)
+    # @comment = Comment.new
+  end
   
 
   private
