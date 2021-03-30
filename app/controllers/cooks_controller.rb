@@ -1,6 +1,6 @@
 class CooksController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :move_to_index, except: [:index, :show]
+  before_action :move_to_index, except: [:index, :show, :search]
 
   
   def index
@@ -45,7 +45,11 @@ class CooksController < ApplicationController
   def show
     @cook = Cook.find(params[:id])
     @comments = @cook.comments.includes(:user)
-    @comment = Comment.new
+    @comment = Comment.new  
+  end
+
+  def search
+    @cook = Cook.search(params[:keyword])
   end
   
 

@@ -17,21 +17,21 @@
           <div class="nav__left">
             <%= link_to image_tag("logo.png", class: :logo), root_path %>
           </div>
-          <%# ログインしているときは以下を表示するようにしましょう %>
+          <%= form_with(url: search_cooks_path, local: true, method: :get, class: "search-form") do |form| %>
+          <%= form.text_field :keyword, placeholder: "レシピを検索する", class: "search-input" %>
+          <%= form.submit "検索", class: "search-btn" %>
+          <% end %>
           <% if user_signed_in? %>
             <div class="nav__right"> 
               <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: :nav__btn %>
               <%= link_to "レシピ投稿", new_cook_path, class: :nav__btn %>
             </div>
-          <%# // ログインしているときは上記を表示するようにしましょう %>
           <% else %>
-          <%# ログインしていないときは以下を表示するようにしましょう %>
             <div class="nav__right">
               <%= link_to "ログイン", new_user_session_path, class: :nav__btn %>
               <%= link_to "新規登録", new_user_registration_path, class: :nav__btn %>
             </div>
           <% end %> 
-          <%# // ログインしていないときは上記を表示するようにしましょう %>
         </div>
       </div>
     </header>
