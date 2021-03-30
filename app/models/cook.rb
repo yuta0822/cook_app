@@ -8,6 +8,14 @@ class Cook < ApplicationRecord
   has_many         :comments,  dependent: :destroy
   has_one_attached :image
 
+  def self.search(search)
+    if search != ""
+      Cook.where('title LIKE(?)', "%#{search}%")
+    else
+      Cook.all
+    end
+  end
+
   with_options presence: true do
     validates :title
     validates :catch_copy
