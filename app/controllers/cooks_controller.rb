@@ -55,7 +55,7 @@ class CooksController < ApplicationController
 
   private
   def cook_params
-    params.require(:cook).permit(:title, :catch_copy, :category_id, :cooktime_id, :material, :making, :point, images: []).merge(user_id: current_user.id)
+    params.require(:cook).permit(:title, :catch_copy, :category_id, :cooktime_id, :material, :making, :point, :image).merge(user_id: current_user.id)
   end
 
   def move_to_index
