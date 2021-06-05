@@ -27,8 +27,8 @@
 
 
 # 機能一覧
-
-![Uploading 8438cc9a97bb8f288d93bea61b99e12d.png…]()
+# ユーザー登録
+<img width="795" alt="85728d3900870eeccec1140e6c015831" src="https://user-images.githubusercontent.com/77149871/120877706-fea64880-c5f2-11eb-94bd-12e6c52c8902.png">
 
 | 機能           | 概要             |
 | -------------- | -----------------|
