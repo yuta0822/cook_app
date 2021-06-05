@@ -1,5 +1,6 @@
 #  cook_app
 ### 料理レシピを投稿ができるアプリケーション
+https://gyazo.com/bbeb81f4a5de3878be2a2f272d291d6f
 
 # 概要
 
