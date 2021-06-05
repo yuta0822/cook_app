@@ -9,7 +9,7 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700,900&display=swap" rel="stylesheet">
   </head>
-
+  
   <body>
     <header class="header">
       <div class="inner">
@@ -17,10 +17,6 @@
           <div class="nav__left">
             <%= link_to image_tag("logo.png", class: :logo), root_path %>
           </div>
-          <%= form_with(url: search_cooks_path, local: true, method: :get, class: "search-form") do |form| %>
-            <%= form.text_field :keyword, placeholder: "レシピを検索する", class: "search-input" %>
-            <%= form.submit "検索", class: "search-btn" %>
-          <% end %>
           <% if user_signed_in? %>
             <div class="nav__right"> 
               <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: :nav__btn %>

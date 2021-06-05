@@ -2,9 +2,10 @@
   <div class="inner">
     <div class="cook__wrapper">
       <p class="cook__hedding">
-        <%= @cook.title %>
-      </p>
-      <%= link_to @cook.user.nickname, root_path, class: :cook__user %>
+       <div class="cook__detail">
+        <p class="detail__title">料理名</p>
+        <p class="card__summary"><%= @cook.title %></p>
+       </div>
         <div class="cook__manage">
         <% if user_signed_in? && current_user.id == @cook.user_id %>
           <%= link_to "編集する", edit_cook_path(@cook.id), class: :cook__btn %>
@@ -16,29 +17,33 @@
       </div>
       <div class="cook__body">
         <div class="cook__detail">
-          <p class="detail__title">キャッチコピー</p>
-          <p class="detail__message">
-            <%= @cook.catch_copy %>
-          </p>
-        </div>
-        <div class="cook__detail">
           <p class="detail__title">材料</p>
           <p class="detail__message">
-            <%= @cook.material %>
+          <p class="card__summary"><%= @cook.material %>
           </p>
         </div>
         <div class="cook__detail">
           <p class="detail__title">作り方</p>
           <p class="detail__message">
-            <%= @cook.making %>
+          <p class="card__summary"><%= @cook.making %>
           </p>
         </div>
         <div class="cook__detail">
           <p class="detail__title">料理のワンポイント</p>
           <p class="detail__message">
-            <%= @cook.point  %>
+          <p class="card__summary"><%= @cook.point  %>
           </p>
         </div>
+        <div class="cook__detail">
+          <p class="detail__title">キャッチコピー</p>
+          <p class="detail__message">
+          <p class="card__summary"><%= @cook.catch_copy %>
+          </p>
+        </div>
+        <div class="cook__detail">
+        <p class="detail__title">投稿者</p>
+        </div>
+        <%= link_to @cook.user.nickname, root_path, class: :cook__user %>
       </div>
       <div class="cook__comments">
         <% if user_signed_in? %>

@@ -5,6 +5,9 @@
     <p class="card__summary">
       <%= cook.catch_copy %>
     </p>
+    <p class="card__summary">
+      <%= cook.point %>
+    </p>
     <%= link_to cook.user.nickname, user_path(cook.user_id), class: :card__user %>
   </div>
 </div>
