@@ -30,6 +30,9 @@
 # ユーザー登録
 <img width="795" alt="85728d3900870eeccec1140e6c015831" src="https://user-images.githubusercontent.com/77149871/120877706-fea64880-c5f2-11eb-94bd-12e6c52c8902.png">
 
+# 投稿機能
+<img width="823" alt="b813b3cd42475997dbc3ae8900b37e26" src="https://user-images.githubusercontent.com/77149871/120877764-55ac1d80-c5f3-11eb-93ac-c21692c06e07.png">
+
 | 機能           | 概要             |
 | -------------- | -----------------|
 | ユーザー管理機能　| 新規登録・ログイン・ログアウトが可能  |
