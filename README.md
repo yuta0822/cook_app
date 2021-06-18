@@ -1,6 +1,8 @@
 #  アプリ名
 ### cook_app
 ### 料理レシピを投稿ができるアプリケーション
+### link URL
+https://cook-app-33959.herokuapp.com/
 ![bbeb81f4a5de3878be2a2f272d291d6f](https://user-images.githubusercontent.com/77149871/120876016-6fe0fe00-c5e9-11eb-8faa-f72b978291d8.jpg)
 
 
